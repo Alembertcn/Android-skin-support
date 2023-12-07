@@ -2,16 +2,24 @@
 
 buildscript {
     repositories {
-        jcenter()
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url "https://jitpack.io" }
+        maven { url "https://mirrors.tencent.com/repository/maven/tencent_public" }
+        maven { url "https://mirrors.tencent.com/repository/maven/liteavsdk" }
+        maven { url "https://mirrors.tencent.com/nexus/repository/maven-public/" }
+
+
         maven {
-            url 'https://maven.google.com/'
-            name 'Google'
+            url "https://maven.aliyun.com/repository/gradle-plugin"
         }
+        google()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.0'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        classpath 'com.android.tools.build:gradle:4.2.2'
+//        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
+//        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -19,11 +27,19 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url "https://jitpack.io" }
+        maven { url "https://mirrors.tencent.com/repository/maven/tencent_public" }
+        maven { url "https://mirrors.tencent.com/repository/maven/liteavsdk" }
+        maven { url "https://mirrors.tencent.com/nexus/repository/maven-public/" }
+
+
         maven {
-            url 'https://maven.google.com/'
-            name 'Google'
+            url "https://maven.aliyun.com/repository/gradle-plugin"
         }
+        google()
+        mavenCentral()
     }
 }
 
@@ -40,6 +56,8 @@ ext {
     supportLibraryVersionInHost = "28.0.0"
 
     glideVersion = "4.7.1"
+    appcompatVersion = "1.2.0" //默认 1.1.0
+    material_version= "1.6.0"  //默认 1.0.0
 
     skinAndroidSupportVersion = "3.1.4"
     skinAndroidSupportSkinGroup = "skin.support"

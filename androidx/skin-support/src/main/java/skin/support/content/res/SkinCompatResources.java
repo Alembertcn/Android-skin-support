@@ -16,6 +16,7 @@ import java.util.List;
 
 import skin.support.SkinCompatManager;
 import skin.support.annotation.AnyRes;
+import skin.support.widget.SkinCompatHelper;
 
 public class SkinCompatResources {
     private static volatile SkinCompatResources sInstance;
@@ -124,7 +125,7 @@ public class SkinCompatResources {
         }
     }
 
-    private int getSkinColor(Context context, int resId) {
+    private int getSkinColor(Context context, int resId,boolean isOnlySkin) {
         if (!SkinCompatUserThemeManager.get().isColorEmpty()) {
             ColorStateList colorStateList = SkinCompatUserThemeManager.get().getColorStateList(resId);
             if (colorStateList != null) {
@@ -145,6 +146,9 @@ public class SkinCompatResources {
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             return context.getResources().getColor(resId, context.getTheme());
+        }
+        if(isOnlySkin){
+            return SkinCompatHelper.INVALID_ID;
         }
         return context.getResources().getColor(resId);
     }
@@ -174,7 +178,7 @@ public class SkinCompatResources {
         return context.getResources().getColorStateList(resId);
     }
 
-    private Drawable getSkinDrawable(Context context, int resId) {
+    private Drawable getSkinDrawable(Context context, int resId,boolean isOnlySkin) {
         if (!SkinCompatUserThemeManager.get().isColorEmpty()) {
             ColorStateList colorStateList = SkinCompatUserThemeManager.get().getColorStateList(resId);
             if (colorStateList != null) {
@@ -201,6 +205,9 @@ public class SkinCompatResources {
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             return context.getResources().getDrawable(resId, context.getTheme());
+        }
+        if(isOnlySkin){
+            return null;
         }
         return context.getResources().getDrawable(resId);
     }
@@ -234,7 +241,11 @@ public class SkinCompatResources {
     }
 
     public static int getColor(Context context, int resId) {
-        return getInstance().getSkinColor(context, resId);
+        return getColor(context, resId,false);
+    }
+
+    public static int getColor(Context context, int resId,boolean isOnlySkin) {
+        return getInstance().getSkinColor(context, resId,false);
     }
 
     public static ColorStateList getColorStateList(Context context, int resId) {
@@ -242,7 +253,10 @@ public class SkinCompatResources {
     }
 
     public static Drawable getDrawable(Context context, int resId) {
-        return getInstance().getSkinDrawable(context, resId);
+        return getDrawable(context, resId,false);
+    }
+    public static Drawable getDrawable(Context context, int resId,boolean isOnlySkin) {
+        return getInstance().getSkinDrawable(context, resId,isOnlySkin);
     }
 
     public static XmlResourceParser getXml(Context context, int resId) {

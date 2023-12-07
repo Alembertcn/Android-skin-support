@@ -45,16 +45,16 @@ public class SkinMaterialBottomNavigationView extends BottomNavigationView imple
         mBackgroundTintHelper = new SkinCompatBackgroundHelper(this);
         mBackgroundTintHelper.loadFromAttributes(attrs, defStyleAttr);
 
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.BottomNavigationView, defStyleAttr,
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.NavigationBarView, defStyleAttr,
                 R.style.Widget_Design_BottomNavigationView);
 
-        if (a.hasValue(R.styleable.BottomNavigationView_itemIconTint)) {
-            mIconTintResId = a.getResourceId(R.styleable.BottomNavigationView_itemIconTint, INVALID_ID);
+        if (a.hasValue(R.styleable.NavigationBarView_itemIconTint)) {
+            mIconTintResId = a.getResourceId(R.styleable.NavigationBarView_itemIconTint, INVALID_ID);
         } else {
             mDefaultTintResId = resolveColorPrimary();
         }
-        if (a.hasValue(R.styleable.BottomNavigationView_itemTextColor)) {
-            mTextColorResId = a.getResourceId(R.styleable.BottomNavigationView_itemTextColor, INVALID_ID);
+        if (a.hasValue(R.styleable.NavigationBarView_itemTextColor)) {
+            mTextColorResId = a.getResourceId(R.styleable.NavigationBarView_itemTextColor, INVALID_ID);
         } else {
             mDefaultTintResId = resolveColorPrimary();
         }

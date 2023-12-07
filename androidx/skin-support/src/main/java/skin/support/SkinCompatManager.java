@@ -5,11 +5,14 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.text.TextUtils;
 import android.util.SparseArray;
+
+import androidx.appcompat.app.AppCompatDelegate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -446,12 +449,16 @@ public class SkinCompatManager extends SkinObservable {
     @Nullable
     public Resources getSkinResources(String skinPkgPath) {
         try {
+            Resources superRes = mAppContext.getResources();
+            Configuration superResConfiguration = superRes.getConfiguration();
+            Configuration configuration = new Configuration(superResConfiguration);
+            configuration.uiMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES ? Configuration.UI_MODE_NIGHT_YES : Configuration.UI_MODE_NIGHT_NO;
             PackageInfo packageInfo = mAppContext.getPackageManager().getPackageArchiveInfo(skinPkgPath, 0);
             packageInfo.applicationInfo.sourceDir = skinPkgPath;
             packageInfo.applicationInfo.publicSourceDir = skinPkgPath;
+            packageInfo.applicationInfo.packageName = mAppContext.getPackageName();
             Resources res = mAppContext.getPackageManager().getResourcesForApplication(packageInfo.applicationInfo);
-            Resources superRes = mAppContext.getResources();
-            return new Resources(res.getAssets(), superRes.getDisplayMetrics(), superRes.getConfiguration());
+            return new Resources(res.getAssets(), superRes.getDisplayMetrics(), configuration);
         } catch (Exception e) {
             e.printStackTrace();
         }
