@@ -144,11 +144,11 @@ public class SkinCompatResources {
                 return mResources.getColor(targetResId);
             }
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            return context.getResources().getColor(resId, context.getTheme());
-        }
         if(isOnlySkin){
             return SkinCompatHelper.INVALID_ID;
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            return context.getResources().getColor(resId, context.getTheme());
         }
         return context.getResources().getColor(resId);
     }
@@ -245,7 +245,7 @@ public class SkinCompatResources {
     }
 
     public static int getColor(Context context, int resId,boolean isOnlySkin) {
-        return getInstance().getSkinColor(context, resId,false);
+        return getInstance().getSkinColor(context, resId,isOnlySkin);
     }
 
     public static ColorStateList getColorStateList(Context context, int resId) {

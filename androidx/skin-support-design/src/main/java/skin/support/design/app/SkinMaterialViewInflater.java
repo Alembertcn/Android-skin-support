@@ -48,9 +48,9 @@ public class SkinMaterialViewInflater implements SkinLayoutInflater {
             case "com.google.android.material.floatingactionbutton.FloatingActionButton":
                 view = new SkinMaterialFloatingActionButton(context, attrs);
                 break;
-            case "com.google.android.material.bottomnavigation.BottomNavigationView":
-                view = new SkinMaterialBottomNavigationView(context, attrs);
-                break;
+//            case "com.google.android.material.bottomnavigation.BottomNavigationView":
+//                view = new SkinMaterialBottomNavigationView(context, attrs);
+//                break;
             case "com.google.android.material.appbar.CollapsingToolbarLayout":
                 view = new SkinMaterialCollapsingToolbarLayout(context, attrs);
                 break;

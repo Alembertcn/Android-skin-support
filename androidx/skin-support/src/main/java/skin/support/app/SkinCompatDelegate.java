@@ -8,7 +8,6 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import androidx.core.view.ViewCompat;
 
 import java.lang.ref.Reference;
 import java.lang.ref.SoftReference;
