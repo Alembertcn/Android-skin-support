@@ -203,11 +203,12 @@ public class SkinCompatResources {
                 return mResources.getDrawable(targetResId);
             }
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            return context.getResources().getDrawable(resId, context.getTheme());
-        }
         if(isOnlySkin){
             return null;
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            return context.getResources().getDrawable(resId, context.getTheme());
         }
         return context.getResources().getDrawable(resId);
     }
