@@ -53,12 +53,12 @@ public class SkinCompatCardView extends CardView implements SkinCompatSupportabl
             setCardBackgroundColor(backgroundColor);
         } else if (mThemeColorBackgroundResId != INVALID_ID) {
             int themeColorBackground = SkinCompatResources.getColor(getContext(), mThemeColorBackgroundResId);
-            final float[] hsv = new float[3];
-            Color.colorToHSV(themeColorBackground, hsv);
-            backgroundColor = ColorStateList.valueOf(hsv[2] > 0.5f
-                    ? getResources().getColor(R.color.cardview_light_background)
-                    : getResources().getColor(R.color.cardview_dark_background));
-            setCardBackgroundColor(backgroundColor);
+//            final float[] hsv = new float[3];
+//            Color.colorToHSV(themeColorBackground, hsv);
+//            backgroundColor = ColorStateList.valueOf(hsv[2] > 0.5f
+//                    ? getResources().getColor(R.color.cardview_light_background)
+//                    : getResources().getColor(R.color.cardview_dark_background));
+            setCardBackgroundColor(themeColorBackground);
         }
     }
 
