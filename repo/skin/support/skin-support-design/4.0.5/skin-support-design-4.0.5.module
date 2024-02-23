@@ -1,0 +1,89 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "skin.support",
+    "module": "skin-support-design",
+    "version": "4.0.5",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.8.3",
+      "buildId": "gdhhmloyq5gfroyo6j5ysarm24"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "skin-support-design-4.0.5.aar",
+          "url": "skin-support-design-4.0.5.aar",
+          "size": 56540,
+          "sha512": "1ffbc2a0fb186661b6b21920f5b54e34f2153e8ed3b2e3515d054575538afc4318cff79a51296aedd19f8957bf295a3a91600db9e1ec455d40db5e8ad94e27d1",
+          "sha256": "c63b307ed7c3009f1bde4b86d93486a5b74de7f8a470959aad58c5aa51a6d282",
+          "sha1": "923daa09853864a7de2991dd1ba90befdba738b4",
+          "md5": "388990c912b4609915c8bef7b737142f"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.2.0"
+          }
+        },
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "skin.support",
+          "module": "skin-support",
+          "version": {
+            "requires": "4.0.5"
+          }
+        },
+        {
+          "group": "skin.support",
+          "module": "skin-support-appcompat",
+          "version": {
+            "requires": "4.0.5"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "skin-support-design-4.0.5.aar",
+          "url": "skin-support-design-4.0.5.aar",
+          "size": 56540,
+          "sha512": "1ffbc2a0fb186661b6b21920f5b54e34f2153e8ed3b2e3515d054575538afc4318cff79a51296aedd19f8957bf295a3a91600db9e1ec455d40db5e8ad94e27d1",
+          "sha256": "c63b307ed7c3009f1bde4b86d93486a5b74de7f8a470959aad58c5aa51a6d282",
+          "sha1": "923daa09853864a7de2991dd1ba90befdba738b4",
+          "md5": "388990c912b4609915c8bef7b737142f"
+        }
+      ]
+    }
+  ]
+}

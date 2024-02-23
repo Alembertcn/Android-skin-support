@@ -1,0 +1,75 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "skin.support",
+    "module": "skin-support-cardview",
+    "version": "4.0.5",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.8.3",
+      "buildId": "gdhhmloyq5gfroyo6j5ysarm24"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "skin-support-cardview-4.0.5.aar",
+          "url": "skin-support-cardview-4.0.5.aar",
+          "size": 16241,
+          "sha512": "29fc6b3d09841b383ae791635f2d21efe1e2275e2c5329a0b5008489a63e89edb85e380eb64fbe84409efd20e6c8bf8c768309fb133fbd65bd3627ac2a72cbfe",
+          "sha256": "688169a8bc3c9e0e4daf1bc406d562e0b136abc306205f5d5e7facb8231db9d0",
+          "sha1": "8a925289fddaa8a9d5b13eba60e03affa84424cd",
+          "md5": "e3d3b78502770b14b623cbea954e441a"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.cardview",
+          "module": "cardview",
+          "version": {
+            "requires": "1.0.0"
+          }
+        },
+        {
+          "group": "skin.support",
+          "module": "skin-support",
+          "version": {
+            "requires": "4.0.5"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "skin-support-cardview-4.0.5.aar",
+          "url": "skin-support-cardview-4.0.5.aar",
+          "size": 16241,
+          "sha512": "29fc6b3d09841b383ae791635f2d21efe1e2275e2c5329a0b5008489a63e89edb85e380eb64fbe84409efd20e6c8bf8c768309fb133fbd65bd3627ac2a72cbfe",
+          "sha256": "688169a8bc3c9e0e4daf1bc406d562e0b136abc306205f5d5e7facb8231db9d0",
+          "sha1": "8a925289fddaa8a9d5b13eba60e03affa84424cd",
+          "md5": "e3d3b78502770b14b623cbea954e441a"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "skin.support",
+    "module": "skin-support",
+    "version": "4.0.5",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.8.3",
+      "buildId": "gdhhmloyq5gfroyo6j5ysarm24"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "skin-support-4.0.5.aar",
+          "url": "skin-support-4.0.5.aar",
+          "size": 88866,
+          "sha512": "98472dc56b241478df01c9f921a00030daf8483d43c581b6b6e340551580078b8cda3ce10f2258c99a3e15d6d54043afa7bdf0f05793b720ced48e8e3769cbed",
+          "sha256": "9b5cf1536cb4e9b10ce2b7db0db2832d5275f34c30cd4543e11de3333a10a6c4",
+          "sha1": "ca6f05bfb8c37269e34cdfe53257bad8c2db556b",
+          "md5": "14e7c799ff0302d48a0768ed74d7c1a0"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "skin-support-4.0.5.aar",
+          "url": "skin-support-4.0.5.aar",
+          "size": 88866,
+          "sha512": "98472dc56b241478df01c9f921a00030daf8483d43c581b6b6e340551580078b8cda3ce10f2258c99a3e15d6d54043afa7bdf0f05793b720ced48e8e3769cbed",
+          "sha256": "9b5cf1536cb4e9b10ce2b7db0db2832d5275f34c30cd4543e11de3333a10a6c4",
+          "sha1": "ca6f05bfb8c37269e34cdfe53257bad8c2db556b",
+          "md5": "14e7c799ff0302d48a0768ed74d7c1a0"
+        }
+      ]
+    }
+  ]
+}

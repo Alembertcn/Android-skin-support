@@ -1,0 +1,82 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "skin.support",
+    "module": "skin-support-constraint-layout",
+    "version": "4.0.5",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.8.3",
+      "buildId": "gdhhmloyq5gfroyo6j5ysarm24"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "skin-support-constraint-layout-4.0.5.aar",
+          "url": "skin-support-constraint-layout-4.0.5.aar",
+          "size": 19647,
+          "sha512": "9b7e89ac41589abc071920b94caa2ab0251ec4d6bced74ad12309a5ff507329b39fb408fb650d3bd9895fcf113e6d53f1d660e9c00a2d1dde6d164369a8e07b8",
+          "sha256": "cee266f21a2f77cc1334ddddbbaa61c9b7a028825f43eac849ebe7f271f2c643",
+          "sha1": "4d618365491e0052e10d099971fbe312469f136d",
+          "md5": "c7de09e06a01b5d510e5ea094e1f4129"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.constraintlayout",
+          "module": "constraintlayout",
+          "version": {
+            "requires": "2.0.0-alpha2"
+          }
+        },
+        {
+          "group": "skin.support",
+          "module": "skin-support",
+          "version": {
+            "requires": "4.0.5"
+          }
+        },
+        {
+          "group": "skin.support",
+          "module": "skin-support-appcompat",
+          "version": {
+            "requires": "4.0.5"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "skin-support-constraint-layout-4.0.5.aar",
+          "url": "skin-support-constraint-layout-4.0.5.aar",
+          "size": 19647,
+          "sha512": "9b7e89ac41589abc071920b94caa2ab0251ec4d6bced74ad12309a5ff507329b39fb408fb650d3bd9895fcf113e6d53f1d660e9c00a2d1dde6d164369a8e07b8",
+          "sha256": "cee266f21a2f77cc1334ddddbbaa61c9b7a028825f43eac849ebe7f271f2c643",
+          "sha1": "4d618365491e0052e10d099971fbe312469f136d",
+          "md5": "c7de09e06a01b5d510e5ea094e1f4129"
+        }
+      ]
+    }
+  ]
+}
