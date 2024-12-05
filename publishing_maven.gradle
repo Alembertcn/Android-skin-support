@@ -10,7 +10,7 @@ afterEvaluate {
     publishing{
         publications{
             release(MavenPublication){
-                groupId publishGroup
+                groupId "wb.$publishGroup"
                 artifactId moduleName
                 version publishVersion
                 from components.release
@@ -19,7 +19,13 @@ afterEvaluate {
         repositories {
             maven {
                 // change to point to your repo, e.g. http://my.org/repo
-                url = uri("$rootDir/repo")
+//                url = uri("$rootDir/repo")
+                allowInsecureProtocol = true
+                url 'https://web-gy.httester.com/repository/maven-public'
+                credentials {
+                    username System.getenv("WB_REPO_USER")
+                    password System.getenv("WB_REPO_PWD")
+                }
             }
         }
     }

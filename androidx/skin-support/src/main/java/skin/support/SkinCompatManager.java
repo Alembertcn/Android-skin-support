@@ -2,6 +2,7 @@ package skin.support;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
@@ -9,6 +10,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.text.TextUtils;
 import android.util.SparseArray;
 
@@ -436,7 +438,12 @@ public class SkinCompatManager extends SkinObservable {
      */
     public String getSkinPackageName(String skinPkgPath) {
         PackageManager mPm = mAppContext.getPackageManager();
-        PackageInfo info = mPm.getPackageArchiveInfo(skinPkgPath, PackageManager.GET_ACTIVITIES);
+        PackageInfo info = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
+            info = mPm.getPackageArchiveInfo(skinPkgPath, PackageManager.PackageInfoFlags.of(PackageManager.GET_ACTIVITIES) );
+        }else {
+            info = mPm.getPackageArchiveInfo(skinPkgPath, PackageManager.GET_ACTIVITIES);
+        }
         return info.packageName;
     }
 
@@ -452,13 +459,19 @@ public class SkinCompatManager extends SkinObservable {
             Resources superRes = mAppContext.getResources();
             Configuration superResConfiguration = superRes.getConfiguration();
             Configuration configuration = new Configuration(superResConfiguration);
-            configuration.uiMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES ? Configuration.UI_MODE_NIGHT_YES : Configuration.UI_MODE_NIGHT_NO;
+            configuration.uiMode = (configuration.uiMode & ~Configuration.UI_MODE_NIGHT_MASK |  (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES ? Configuration.UI_MODE_NIGHT_YES : Configuration.UI_MODE_NIGHT_NO));
             PackageInfo packageInfo = mAppContext.getPackageManager().getPackageArchiveInfo(skinPkgPath, 0);
             packageInfo.applicationInfo.sourceDir = skinPkgPath;
             packageInfo.applicationInfo.publicSourceDir = skinPkgPath;
             packageInfo.applicationInfo.packageName = mAppContext.getPackageName();
-            Resources res = mAppContext.getPackageManager().getResourcesForApplication(packageInfo.applicationInfo);
-            return new Resources(res.getAssets(), superRes.getDisplayMetrics(), configuration);
+            Resources res = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+                res = mAppContext.getPackageManager().getResourcesForApplication(packageInfo.applicationInfo,configuration);
+            }else {
+                res = mAppContext.getPackageManager().getResourcesForApplication(packageInfo.applicationInfo);
+                res.updateConfiguration(configuration, superRes.getDisplayMetrics());
+            }
+            return res;
         } catch (Exception e) {
             e.printStackTrace();
         }
