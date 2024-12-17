@@ -141,7 +141,7 @@ public class SkinCompatResources {
         if (!isDefaultSkin) {
             int targetResId = getTargetResId(context, resId);
             if (targetResId != 0) {
-                return mResources.getColor(targetResId, context.getTheme());
+                return mResources.getColor(targetResId);
             }
         }
         if(isOnlySkin){
@@ -169,7 +169,7 @@ public class SkinCompatResources {
         if (!isDefaultSkin) {
             int targetResId = getTargetResId(context, resId);
             if (targetResId != 0) {
-                return mResources.getColorStateList(targetResId, context.getTheme());
+                return mResources.getColorStateList(targetResId);
             }
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -210,7 +210,7 @@ public class SkinCompatResources {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             return context.getResources().getDrawable(resId, context.getTheme());
         }
-        return context.getResources().getDrawable(resId, context.getTheme());
+        return context.getResources().getDrawable(resId);
     }
 
     Drawable getStrategyDrawable(Context context, int resId) {
