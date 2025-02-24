@@ -110,12 +110,12 @@ final class SkinCompatDrawableManager {
             R.drawable.abc_textfield_search_activated_mtrl_alpha,
             R.drawable.abc_cab_background_top_mtrl_alpha,
             R.drawable.abc_text_cursor_material,
-            R.drawable.abc_text_select_handle_left_mtrl_dark,
-            R.drawable.abc_text_select_handle_middle_mtrl_dark,
-            R.drawable.abc_text_select_handle_right_mtrl_dark,
-            R.drawable.abc_text_select_handle_left_mtrl_light,
-            R.drawable.abc_text_select_handle_middle_mtrl_light,
-            R.drawable.abc_text_select_handle_right_mtrl_light
+//            R.drawable.abc_text_select_handle_left_mtrl_dark,
+//            R.drawable.abc_text_select_handle_middle_mtrl_dark,
+//            R.drawable.abc_text_select_handle_right_mtrl_dark,
+//            R.drawable.abc_text_select_handle_left_mtrl_light,
+//            R.drawable.abc_text_select_handle_middle_mtrl_light,
+//            R.drawable.abc_text_select_handle_right_mtrl_light
     };
 
     /**
@@ -701,12 +701,12 @@ final class SkinCompatDrawableManager {
         // Here we will check that a known Vector drawable resource inside AppCompat can be
         // correctly decoded
         mHasCheckedVectorDrawableSetup = true;
-        final Drawable d = getDrawable(context, R.drawable.abc_vector_test);
-        if (d == null || !isVectorDrawable(d)) {
-            mHasCheckedVectorDrawableSetup = false;
-            throw new IllegalStateException("This app has been built with an incorrect "
-                    + "configuration. Please configure your build for VectorDrawableCompat.");
-        }
+//        final Drawable d = getDrawable(context, R.drawable.abc_vector_test);
+//        if (d == null || !isVectorDrawable(d)) {
+//            mHasCheckedVectorDrawableSetup = false;
+//            throw new IllegalStateException("This app has been built with an incorrect "
+//                    + "configuration. Please configure your build for VectorDrawableCompat.");
+//        }
     }
 
     private static boolean isVectorDrawable(@NonNull Drawable d) {
